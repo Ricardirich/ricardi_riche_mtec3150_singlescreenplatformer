@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+    
     protected SpriteRenderer sr;
     public Color powerUpColor;
     protected PlayerController player;
@@ -10,7 +11,7 @@ public class PowerUp : MonoBehaviour
     private float timeElapsedSinceEffect;
 
 
-    private void Start()
+    protected virtual void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         sr = GetComponent<SpriteRenderer>();

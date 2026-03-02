@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - player
+  - wall
+  - Enemy
+  - Moving_Platform
   layers:
   - Default
   - TransparentFX
@@ -12,9 +15,9 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
+  - player
+  - platform
+  - Enemy
   - 
   - 
   - 

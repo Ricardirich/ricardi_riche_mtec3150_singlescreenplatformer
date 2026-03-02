@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed;
     private float xMove;
     private float xVelocity;
+    public int HP = 1;
 
     private Rigidbody2D rb;
 
@@ -25,6 +26,9 @@ public class PlayerController : MonoBehaviour
     private bool meleeTriggered = false;
 
     public GameObject bulletPrefab;
+    public float bulletSpeed = 400;
+
+    public Color bulletColor; 
 
     void Start()
     {
@@ -101,7 +105,11 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 pos = new Vector3(transform.position.x + (attackOffset * facingDirection), transform.position.y, 0);
         GameObject bullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
-        bullet.GetComponent<Bullet>().direction = new Vector2(facingDirection, 0);
+        var bScript = bullet.GetComponent<Bullet>();
+       bScript.direction = new Vector2(facingDirection, 0); 
+       bScript.speed = bulletSpeed;
+        bScript.col = bulletColor;
+        bScript.isPlayerBullet = true;  
     }
 
     private bool IsGrounded()
@@ -112,12 +120,19 @@ public class PlayerController : MonoBehaviour
         return Physics2D.CircleCast(transform.position, radius, Vector2.down, dist, ground);
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void IncrementHp(int amount)
     {
-        if (collision.GetComponent<PowerUp>() != null)
+        if (HP + amount > 0)
         {
-            collision.GetComponent<PowerUp>().ApplyEffect();
-
+            HP += amount;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
+   
+
+   
 }
+

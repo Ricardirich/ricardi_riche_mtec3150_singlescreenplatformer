@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474720086163748786}
-  - component: {fileID: 5033540813933889858}
-  - component: {fileID: 2452954954186056604}
   - component: {fileID: -8717527150383988717}
+  - component: {fileID: 2452954954186056604}
+  - component: {fileID: 5033540813933889858}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -35,33 +35,23 @@ Transform:
   - {fileID: 1082261263194399517}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &5033540813933889858
-Rigidbody2D:
-  serializedVersion: 5
+--- !u!114 &-8717527150383988717
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674410643319474523}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09678a5fe63f5d4ebde9daf806b85b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 400
+  direction: {x: 0, y: 0}
+  col: {r: 0, g: 0, b: 0, a: 0}
+  damageAmount: 1
+  isPlayerBullet: 0
 --- !u!58 &2452954954186056604
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,20 +88,33 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.40267274, y: 0}
   m_Radius: 0.09732726
---- !u!114 &-8717527150383988717
-MonoBehaviour:
+--- !u!50 &5033540813933889858
+Rigidbody2D:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674410643319474523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ece1afbc3baf8d4bb993e83b1c3b4bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  direction: {x: 0, y: 0}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5067768685663693461
 GameObject:
   m_ObjectHideFlags: 0

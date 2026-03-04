@@ -13,6 +13,7 @@ public class PowerUp : MonoBehaviour
 
     protected virtual void Start()
     {
+        Debug.Log(player = GameObject.Find("Player").GetComponent<PlayerController>());
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         sr = GetComponent<SpriteRenderer>();
         sr.color = powerUpColor;
@@ -21,8 +22,11 @@ public class PowerUp : MonoBehaviour
 
     public virtual void ApplyEffect()
     {
-        //Destroy(gameObject);
         sr.enabled = false;
+
+        
+        GetComponent<Collider2D>().enabled = false;
+
         effectsApplied = true;
     }
 

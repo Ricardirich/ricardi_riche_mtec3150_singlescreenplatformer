@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
             enemyHit.DecrementHp(damageAmount);
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("player") && !isPlayerBullet )
+        if (collision.gameObject.CompareTag("Player") && !isPlayerBullet )
         {
             var player = collision.gameObject.GetComponent<PlayerController>();
             player.IncrementHp(-damageAmount);

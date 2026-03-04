@@ -28,7 +28,10 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 400;
 
-    public Color bulletColor; 
+    public Color bulletColor;
+
+    public float fireRate = 0.5f;   
+    private float fireCooldown = 0f;
 
     void Start()
     {
@@ -52,9 +55,15 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(1))
+        if (fireCooldown > 0)
+        {
+            fireCooldown -= Time.deltaTime;
+        }
+
+        if (Input.GetMouseButton(1) && fireCooldown <= 0)
         {
             RangedAttack();
+            fireCooldown = fireRate;
         }
 
         if (xMove != 0)
